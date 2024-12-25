@@ -2,15 +2,12 @@ import BG from "../assets/BgMeme.png";
 
 const HeroSection = () => {
   return (
-    <section className="bg-white text-black relative">
-      {/* Background Characters (Image Placeholder) */}
-      <div className="absolute top-0 z-10">
-        <img
-          src={BG} // Replace with actual image URL
-          alt="Hero Background Characters"
-          className="w-full h-auto"
-        />
-      </div>
+    <section
+      className="bg-white text-black relative h-[130vh] bg-cover bg-center"
+      style={{
+        backgroundImage: `url(${BG})`, // Replace BG with the actual image URL or import
+      }}
+    >
       <div className="w-full absolute z-20 luckiest-guy-regular">
         <div className="max-w-6xl mx-auto px-4 py-10 text-center mt-24">
           {/* Tagline */}
@@ -28,7 +25,7 @@ const HeroSection = () => {
           {/* Button */}
           <div className="mt-6">
             <button className="bg-black text-white px-6 py-3 text-lg rounded-lg font-medium hover:bg-gray-800 transition">
-              GO SWAP
+              Unomas Please
             </button>
           </div>
 
