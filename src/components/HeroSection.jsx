@@ -1,6 +1,8 @@
+import { useState } from "react";
 import BG from "../assets/BgMeme.png";
 
 const HeroSection = () => {
+  const [isCopy, setIsCopy] = useState(false);
   return (
     <section
       className="bg-white text-black relative h-[130vh] bg-cover bg-center"
@@ -23,23 +25,21 @@ const HeroSection = () => {
           </h1>
 
           {/* Button */}
-          <div className="mt-6">
-            <button className="bg-black text-white px-6 py-3 text-lg rounded-lg font-medium hover:bg-gray-800 transition">
-              Unomas Please
+          <div className="mt-6 flex justify-center items-center flex-col md:flex-row">
+            <div className="bg-black text-white px-6 pt-3 pb-2 text-wrap text-xs sm:text-sm md:text-lg rounded-lg font-medium mr-4">
+              95WzV2CsTRFBjPCBhQRR4TGVp5kXo8f8qZVt7iVwpump
+            </div>
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText(
+                  "95WzV2CsTRFBjPCBhQRR4TGVp5kXo8f8qZVt7iVwpump"
+                );
+                setIsCopy(true);
+              }}
+              className="bg-black text-white px-6 pt-3 pb-2 text-xs sm:text-sm md:text-lg rounded-lg font-medium hover:bg-gray-800 transition mt-4 md:mt-0"
+            >
+              {isCopy ? "✔ " : " "} Copy
             </button>
-          </div>
-
-          {/* Progress Details */}
-          <p className="mt-4 text-lg font-medium">
-            USDT 6,345,114.12 / 10,000,000.00 involved
-          </p>
-
-          {/* Progress Bar */}
-          <div className="mt-4 w-full max-w-md mx-auto bg-gray-300 rounded-full overflow-hidden">
-            <div
-              className="bg-black h-4 rounded-full"
-              style={{ width: "63.45%" }} // Adjust width dynamically
-            ></div>
           </div>
         </div>
       </div>
